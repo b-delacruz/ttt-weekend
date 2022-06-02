@@ -32,16 +32,17 @@ const messageEl = document.querySelector('#message')
 
 console.log(squareEls)
 console.log(messageEl)
-  // a) In a constant called `squareEls`, store the nine elements representing 
-  //    the squares on the page.
 
-  // b) In a constant called `messageEl`, store the element that displays the 
-  //    game's status on the page.
 
 
 // Step 3 - Upon loading, the game state should be initialized, and a function 
 //          should be called to render this game state
 
+function init(){
+  console.log('Sanity Check')
+}
+
+console.log(init)
   // a) Create a function called `init`.
 
   // b) Call this `init` function when the app loads.
