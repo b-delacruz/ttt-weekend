@@ -28,7 +28,7 @@ let winner = ''
 // Step 2 - Store cached element references
 
 const squareEls = document.querySelectorAll('.square')
-const messageEl = document.getElementById('#message')
+const messageEl = document.querySelector('#message')
 
 console.log(squareEls)
 console.log(messageEl)
