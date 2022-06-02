@@ -19,9 +19,9 @@
 
 
 
-const board = ''
-const turn = ''
-let winner = ''
+const board = [board[0], board[1], board[2], board[3], board[4], board[5], board[6], board[7], board[8]]
+const turn = 1
+let winner = 'null'
 
   
 
@@ -43,9 +43,7 @@ function init(){
 }
 
 console.log(init)
-  // a) Create a function called `init`.
 
-  // b) Call this `init` function when the app loads.
 
   // c) Set the `board` variable to an array containing nine `null`s to 
   //    represent empty squares.
