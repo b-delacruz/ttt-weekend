@@ -57,6 +57,15 @@ init()
       }
     })
 
+
+  if (winner === null){
+    messageEl.textContent = 'Whose Turn Is It.'
+  } else if (winner === 'T') {
+    messageEl.textContent = 'Its a Tie'
+  } else {
+    messageEl.textContent = 'Congrats Winner!'
+  }
+  
   console.log(element)
   console.log(squareEls[index])
   } 
