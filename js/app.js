@@ -19,9 +19,9 @@
 
 
 
-const board = [board[0], board[1], board[2], board[3], board[4], board[5], board[6], board[7], board[8]]
+const board = [1,null,-1,null,1,null,1,1,1]
 const turn = 1
-let winner = 'null'
+let winner = null
 
   
 
@@ -39,18 +39,30 @@ console.log(messageEl)
 //          should be called to render this game state
 
 function init(){
+  
   console.log('Sanity Check')
+  render()
 }
+init()
 
-console.log(init)
 
+  function render() {
+    board.forEach(function(element, index) {
+      if (element === 1){
+        squareEls[index].textContent = 'X'
+      } else if (element === -1){
+        squareEls[index].textContent = 'O'
+      } else if (element === null){
+        squareEls[index].textContent = ''
+      }
+    })
 
-  // c) Set the `board` variable to an array containing nine `null`s to 
-  //    represent empty squares.
+  console.log(element)
+  console.log(squareEls[index])
+  } 
 
-  // d) Set the `turn` to `1` - which will represent player X.
+  console.log(squareEls)
 
-  // e) Set the `winner` to `null`.
 
   // f) Call a function called `render` at the end of the `init` function.
 
