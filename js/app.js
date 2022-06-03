@@ -50,6 +50,7 @@ function render() {
   
 function handleClick(evt) {
   const sqIdx = evt.target.id.substring(2)
+  winner = getWinner()
     if (board[sqIdx] !== null || winner !== null){
       return 
     }
@@ -66,10 +67,8 @@ function getWinner() {
           return 1
       } else  if (board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]] === -3) {
           return -1
-      } else if (!board.includes(null)) {
-          return "T" 
-      } else {
-        return null
-      } 
-    }
+      } else if (!board.includes(null)){
+        return "T"
+      }
+    } return null
   }
