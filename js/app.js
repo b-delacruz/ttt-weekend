@@ -50,7 +50,7 @@ function render() {
   
 function handleClick(evt) {
   const sqIdx = evt.target.id.substring(2)
-  winner = getWinner()
+
     if (board[sqIdx] !== null || winner !== null){
       return 
     }
