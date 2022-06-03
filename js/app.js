@@ -57,8 +57,6 @@ function render() {
 
 
 
-// Step 6 - Handle a player clicking a square with a `handleClick` function
-
 function handleClick(evt){
   console.log(evt.target)
   const sqIdx = parseInt(evt.target.id.slice(2))
@@ -73,40 +71,21 @@ function handleClick(evt){
       getWinner()
       render()
     }
-    
 }
 
 
-  // a) Create a function called `handleClick`. It will have an `evt` parameter.
-
-  // b) Attach an event listener to the game board. On the `'click'` event, it 
-  //    should call the `handleClick` function you created in 6a.
-
-  // c) Obtain the index of the square that was clicked by "extracting" the 
-  //    index from an `id` assigned to the element in the HTML. Assign this to 
-  //    a constant called `sqIdx`.
-
-  // d) If the `board` has a value at the `sqIdx`, immediately `return` because 
-  //    that square is already taken. Also, if `winner` is not `null`
-  //    immediately `return` because the game is over.
-
-  // e) Update the `board` array at the `sqIdx` with the current value of
-  //    `turn`.
-
-  // f) Change the turn by multiplying `turn` by `-1` (this flips a `1` to
-  //    `-1`, and vice-versa).
-
-  // g) Set the `winner` variable if there's a winner by calling a new 
-  //    function: `getWinner`.
-
-  // h) All the state has been updated so we need to render our updated state 
-  //    to the user by calling the `render` function we wrote earlier.
-
 // Step 7 - Build the `getWinner` function
-function getWinner(index) {
-  winningCombos.forEach(function(element,index){
-
-  })}
+function getWinner() {
+  winningCombos.forEach(function(combo){
+    if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]]=== 3)){
+      winner = turn 
+    } else if (!board.includes(null)) {
+      winner = "T"
+    } else {
+      return null
+    }
+  })
+}
   // a) Create a function called `getWinner`
 
   /* 
