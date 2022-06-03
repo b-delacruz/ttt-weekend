@@ -42,7 +42,7 @@ function render() {
   } else if (winner === "T") {
     messageEl.textContent = 'Its a Tie! So Close'
   } else {
-     messageEl.textContent = `Congrats Player ${winner === 1? 'X' : 'O'} You are the Winner!`
+     messageEl.textContent = `Congrats Player ${winner === 1? 'Johnathan' : 'O'} You are the Winner!`
   }
 } 
   
