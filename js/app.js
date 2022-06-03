@@ -34,23 +34,20 @@ function render() {
       squareEls[index].textContent = 'O'
     } else if (element === null){
       squareEls[index].textContent = ''
-    } else if (element === 'T'){
-      squareEls[index].textContent = 'T'
-    }
+    } 
   })
 
   if (winner === null){
-    return (turn === 1 ? messageEl.textContent = "Player X's turn!": messageEl.textContent = "Player O's turn!")
-  } else if (winner === 'T') {
+    messageEl.textContent = turn === 1 ? "Player X's turn!": "Player O's turn!"
+  } else if (winner === "T") {
     messageEl.textContent = 'Its a Tie! So Close'
   } else {
-    return (winner === 1 ? messageEl.textContent = "Congrats Player X, You are the Winner!": messageEl.textContent = "Congrats Player O, You are the Winner!")
+     messageEl.textContent = `Congrats Player ${winner === 1? 'X' : 'O'} You are the Winner!`
   }
 } 
   
 function handleClick(evt) {
   const sqIdx = evt.target.id.substring(2)
-
     if (board[sqIdx] !== null || winner !== null){
       return 
     }
@@ -63,12 +60,14 @@ function handleClick(evt) {
 function getWinner() {
     
   for (let i=0; i < winningCombos.length; i++) {
-      if (board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]] === 3) {
-          return 1
-      } else  if (board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]] === -3) {
-          return -1
-      } else if (!board.includes(null)){
-        return "T"
-      }
-    } return null
+    if (board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]] === 3) {
+      return 1
+    } else  if (board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]] === -3) {
+      return -1
+    }
+  } 
+  if (!board.includes(null)){
+      return "T"
+    }
+    return null
   }
