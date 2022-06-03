@@ -49,9 +49,7 @@ function render() {
 } 
   
 function handleClick(evt) {
-  winner = getWinner()
   const sqIdx = evt.target.id.substring(2)
-
     if (board[sqIdx] !== null || winner !== null){
       return 
     }
