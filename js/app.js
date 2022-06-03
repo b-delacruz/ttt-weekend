@@ -1,49 +1,44 @@
 /*-------------------------------- Constants --------------------------------*/
-
+const winningCombos = [[0,3,6],[1,4,7],[2,5,8],[0,1,2],[3,4,5],[6,7,8],[2,4,6],[0,4,8]]
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-const board = [1,null,null,null,1,null,null,null,1]
-const turn = 1
-const winner = null
-const winningCombos = [[0,3,6],[1,4,7],[2,5,8],[0,1,2],[3,4,5],[6,7,8],[2,4,6],[0,4,8]]
-
-
-
-
-
-
-
+let board
+let turn 
+let winner 
 
 /*------------------------ Cached Element References ------------------------*/
 
 const squareEls = document.querySelectorAll('.square')
 const messageEl = document.querySelector('#message')
 
-/*----------------------------- Event Listeners -----------------------------*/
 
+/*----------------------------- Event Listeners -----------------------------*/
+const gameBoard = document.querySelector('#game-board').addEventListener('click', handleClick)
 
 
 /*-------------------------------- Functions --------------------------------*/
+init()
 
 function init(){
-  
+  board = [1,1,null,null,-1,null,null,null,1]
+  turn = 1
+  winner = null
   console.log('Sanity Check')
   render()
 }
-init()
 
 
-  function render() {
-    board.forEach(function(element, index) {
-      if (element === 1){
-        squareEls[index].textContent = 'X'
-      } else if (element === -1){
-        squareEls[index].textContent = 'O'
-      } else if (element === null){
-        squareEls[index].textContent = ''
-      }
-    })
+function render() {
+  board.forEach(function(element, index) {
+    if (element === 1){
+      squareEls[index].textContent = 'X'
+    } else if (element === -1){
+      squareEls[index].textContent = 'O'
+    } else if (element === null){
+      squareEls[index].textContent = ''
+    }
+  })
 
 
   if (winner === null){
@@ -65,7 +60,8 @@ init()
 // Step 6 - Handle a player clicking a square with a `handleClick` function
 
 function handleClick(evt){
-
+    
+  
 }
   // a) Create a function called `handleClick`. It will have an `evt` parameter.
 
@@ -93,7 +89,10 @@ function handleClick(evt){
   //    to the user by calling the `render` function we wrote earlier.
 
 // Step 7 - Build the `getWinner` function
+function getWinner(index) {
+  winningCombos.forEach(function(element,index){
 
+  })}
   // a) Create a function called `getWinner`
 
   /* 
