@@ -86,40 +86,6 @@ function getWinner() {
     }
   })
 }
-  // a) Create a function called `getWinner`
-
-  /* 
-   * There are two methods you can use to find out if there is a winner.
-   *
-   * Step b1 below is a more elegant method that takes advantage of the
-   * `winningCombos` array you wrote above in step 5. 
-   *
-   * Step b2 might be a little simpler to comprehend, but you'll need to write  
-   * more code. Step b2 also won't take advantage of the `winningCombos`
-   * array, but using it as a reference will help you build a solution.
-   * ***Ensure you choose only one path.***
-   */
-
-  // b1) Loop through each of the winning combination arrays defined in the 
-  //     `winningCombos` array. Total up the three board positions using the 
-  //     three indexes in the current combo. Convert the total to an absolute 
-  //     value (convert any negative total to positive). If the total equals 3, 
-  //     we have a winner! Set the `winner` variable to the board's value at
-  //     the index specified by the first index of that winning combination's
-  //     array by returning that value.
-
-  // b2) For each one of the winning combinations you wrote in step 5, find the
-  //     total of each winning combination. Convert the total to an absolute 
-  //     value (convert any negative total to positive). If the total equals 3, 
-  //     we have a winner! Set the `winner` variable to the board's value at 
-  //     the index specified by the first index of that winning combination's 
-  //     array by returning that value.
-
-  // c) If there is no winner, check to see if there is a tie. Set the `winner` 
-  //    variable to `'T'` if there are no more nulls in the board array by 
-  //    returning the string `'T'`.
-
-  // d) If there is no winner and there isn’t a tie, return `null`.
 
 // Step 8 - Create Reset functionality
 
