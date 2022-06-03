@@ -1,42 +1,30 @@
 /*-------------------------------- Constants --------------------------------*/
 
 
-
 /*---------------------------- Variables (state) ----------------------------*/
+
+const board = [1,null,null,null,1,null,null,null,1]
+const turn = 1
+const winner = null
+const winningCombos = [[0,3,6],[1,4,7],[2,5,8],[0,1,2],[3,4,5],[6,7,8],[2,4,6],[0,4,8]]
+
+
+
+
+
 
 
 
 /*------------------------ Cached Element References ------------------------*/
 
-
+const squareEls = document.querySelectorAll('.square')
+const messageEl = document.querySelector('#message')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
 
 
 /*-------------------------------- Functions --------------------------------*/
-
-
-
-
-const board = [null,null,null,null,1,null,1,1,1]
-const turn = 1
-let winner = null
-
-  
-
-// Step 2 - Store cached element references
-
-const squareEls = document.querySelectorAll('.square')
-const messageEl = document.querySelector('#message')
-
-console.log(squareEls)
-console.log(messageEl)
-
-
-
-// Step 3 - Upon loading, the game state should be initialized, and a function 
-//          should be called to render this game state
 
 function init(){
   
@@ -73,20 +61,17 @@ init()
   console.log(squareEls)
 
 
-
-    
-
 // Step 5 - Define the required constants
 
-const winningCombos = ''
 
-function getWinner() {
-  winningCombos.forEach(combo => {
+
+
+
       // find the sum of the values within the board array at indices 0, 1, and 2 of the combo
       // if the absolute value of the sum is 3, there's a winner
       // because you're tracking the turn, you can determine the winner using that variable, which is all you need to return        
-  })
-}
+  
+
 
 
   // a) In a constant called `winningCombos` define the eight possible winning 
