@@ -61,24 +61,12 @@ init()
   console.log(squareEls)
 
 
-// Step 5 - Define the required constants
-
-
-
-
-
-      // find the sum of the values within the board array at indices 0, 1, and 2 of the combo
-      // if the absolute value of the sum is 3, there's a winner
-      // because you're tracking the turn, you can determine the winner using that variable, which is all you need to return        
-  
-
-
-
-  // a) In a constant called `winningCombos` define the eight possible winning 
-  //    combinations as an array of arrays.
 
 // Step 6 - Handle a player clicking a square with a `handleClick` function
 
+function handleClick(evt){
+
+}
   // a) Create a function called `handleClick`. It will have an `evt` parameter.
 
   // b) Attach an event listener to the game board. On the `'click'` event, it 
