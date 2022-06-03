@@ -23,7 +23,6 @@ function init(){
   board = [null,null,null,null,null,null,null,null,null]
   turn = 1
   winner = null
-  console.log('Sanity Check')
   render()
 }
 
@@ -38,44 +37,32 @@ function render() {
     }
   })
 
-
   if (winner === null){
-    messageEl.textContent = 'Whose Turn Is It.'
+    return (turn === 1 ? messageEl.textContent = "Player X's turn!": messageEl.textContent = "Player O's turn!")
   } else if (winner === 'T') {
-    messageEl.textContent = 'Its a Tie'
+    messageEl.textContent = 'Its a Tie! So Close'
   } else {
-    messageEl.textContent = 'Congrats Winner!'
+    return (winner === -1 ? messageEl.textContent = "Congrats Player X, You are the Winner!": messageEl.textContent = "Congrats Player O, You are the Winner!")
   }
-
-  console.log(element)
-  console.log(squareEls[index])
-  } 
-
-  console.log(squareEls)
-
-
-
+} 
+  
 function handleClick(evt){
   console.log(evt.target)
-  const sqIdx = parseInt(evt.target.id.slice(2))
+
+  const sqIdx = (evt.target.id.slice(2))
     if (board[sqIdx] !== null || winner !== null){
-      console.log(sqIdx)
-      console.log(winner)
       return
     } else {
       board[sqIdx] = turn
-      console.log(board)
       turn *= -1
       getWinner()
       render()
     }
 }
 
-
-// Step 7 - Build the `getWinner` function
 function getWinner() {
   winningCombos.forEach(function(combo){
-    if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]]=== -3 || Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]]=== 3))){
+    if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]]=== 3 || Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]]=== -3))){
       winner = turn 
     } else if (!board.includes(null)) {
       winner = "T"
@@ -84,12 +71,3 @@ function getWinner() {
     }
   })
 }
-
-// Step 8 - Create Reset functionality
-
-  // a) Add a reset button to the HTML document.
-
-  // b) Store the new reset button element in a constant named `resetBtnEl`.
-
-  // c) Attach an event listener to the `resetBtnEl`. On the `'click'` event it 
-  //    should call the `init` function you created in 3.
