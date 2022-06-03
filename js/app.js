@@ -21,7 +21,7 @@ const gameBoard = document.querySelector('#game-board').addEventListener('click'
 init()
 
 function init(){
-  board = [1,1,null,null,-1,null,null,null,1]
+  board = [null,null,null,null,null,null,null,null,null]
   turn = 1
   winner = null
   console.log('Sanity Check')
@@ -60,9 +60,23 @@ function render() {
 // Step 6 - Handle a player clicking a square with a `handleClick` function
 
 function handleClick(evt){
+  console.log(evt.target)
+  const sqIdx = parseInt(evt.target.id.slice(2))
+    if (board[sqIdx] !== null || winner !== null){
+      console.log(sqIdx)
+      console.log(winner)
+      return
+    } else {
+      board[sqIdx] = turn
+      console.log(board)
+      turn *= -1
+      getWinner()
+      render()
+    }
     
-  
 }
+
+
   // a) Create a function called `handleClick`. It will have an `evt` parameter.
 
   // b) Attach an event listener to the game board. On the `'click'` event, it 
