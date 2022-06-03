@@ -12,11 +12,10 @@ let winner
 const squareEls = document.querySelectorAll('.square')
 const messageEl = document.querySelector('#message')
 
-
 /*----------------------------- Event Listeners -----------------------------*/
 const gameBoard = document.querySelector('#game-board').addEventListener('click', handleClick)
 
-
+const resetBtnEl = document.querySelector('.reset').addEventListener('click', init)
 /*-------------------------------- Functions --------------------------------*/
 init()
 
@@ -27,7 +26,6 @@ function init(){
   console.log('Sanity Check')
   render()
 }
-
 
 function render() {
   board.forEach(function(element, index) {
