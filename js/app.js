@@ -34,6 +34,8 @@ function render() {
       squareEls[index].textContent = 'O'
     } else if (element === null){
       squareEls[index].textContent = ''
+    } else if (element === 'T'){
+      squareEls[index].textContent = 'T'
     }
   })
 
@@ -42,32 +44,34 @@ function render() {
   } else if (winner === 'T') {
     messageEl.textContent = 'Its a Tie! So Close'
   } else {
-    return (winner === -1 ? messageEl.textContent = "Congrats Player X, You are the Winner!": messageEl.textContent = "Congrats Player O, You are the Winner!")
+    return (winner === 1 ? messageEl.textContent = "Congrats Player X, You are the Winner!": messageEl.textContent = "Congrats Player O, You are the Winner!")
   }
 } 
   
-function handleClick(evt){
-  console.log(evt.target)
+function handleClick(evt) {
+  winner = getWinner()
+  const sqIdx = evt.target.id.substring(2)
 
-  const sqIdx = (evt.target.id.slice(2))
     if (board[sqIdx] !== null || winner !== null){
-      return
-    } else {
+      return 
+    }
       board[sqIdx] = turn
       turn *= -1
-      getWinner()
+      winner = getWinner()
       render()
-    }
 }
 
 function getWinner() {
-  winningCombos.forEach(function(combo){
-    if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]]=== 3 || Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]]=== -3))){
-      winner = turn 
-    } else if (!board.includes(null)) {
-      winner = "T"
-    } else {
-      return null
+    
+  for (let i=0; i < winningCombos.length; i++) {
+      if (board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]] === 3) {
+          return 1
+      } else  if (board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]] === -3) {
+          return -1
+      } else if (!board.includes(null)) {
+          return "T" 
+      } else {
+        return null
+      } 
     }
-  })
-}
+  }
