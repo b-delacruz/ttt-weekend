@@ -29,7 +29,7 @@ function init(){
 function render() {
   board.forEach(function(element, index) {
     if (element === 1){
-      squareEls[index].textContent = 'X'
+      squareEls[index].textContent = 'X';
     } else if (element === -1){
       squareEls[index].textContent = 'O'
     } else if (element === null){
@@ -42,7 +42,7 @@ function render() {
   } else if (winner === "T") {
     messageEl.textContent = 'Its a Tie! So Close'
   } else {
-     messageEl.textContent = `Congrats Player ${winner === 1? 'Johnathan' : 'O'} You are the Winner!`
+     messageEl.textContent = `Congrats Player ${winner === 1? 'X' : 'O'} You are the Winner!`
   }
 } 
   
@@ -71,3 +71,5 @@ function getWinner() {
     }
     return null
   }
+
+  
