@@ -71,5 +71,3 @@ function getWinner() {
     }
     return null
   }
-
-  
